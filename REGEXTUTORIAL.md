@@ -29,8 +29,10 @@ In the end we will look at how this Regex pattern validates an email address. [E
 - [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 - [Email-Example-Explained](#example-explained)
+- [About-Me](#author)
 
 ## Regex Components
+
 
 ### Anchors
 
@@ -44,6 +46,7 @@ and
 In the example of a valid email address, we see that ``^`` is placed in the beginning of the string to represent the start of an email string. The string ends with a ``$`` anchor, representing end of the email address.
 
 There are other anchors that are not used in the example above and we will be exploring some of them later in this tutorial.
+
 
 ### Quantifiers
 
@@ -73,6 +76,7 @@ If this is re written as ``([a-z]{2,})`` or ``([a-z]{2})``. The lowercase alphab
 
 ** See below to learn character classes
 
+
 ### OR Operator
 
 The OR operator is represented by ``|`` pipe symbol. It allows for matching multiple patterns. There is no OR operator in the example above.
@@ -90,6 +94,7 @@ if (pattern.test(string)) {
 ```
 When we run this code it will log Pattern Matched in the console. 
 It will return Pattern matched till the string has either Javascript and/or Typescript in it.
+
 
 ### Character Classes
 
@@ -153,6 +158,7 @@ This allows to define pattern for different parts of email.
 
 Bracket expression are also known as character classes. Please refer to section on character classes.
 
+
 ### Greedy and Lazy Match
 
 Our example of regex for email does not have any explicit greedy or lazy matches. Quantifiers ``+`` and ``{2-6}`` work in their own way. ``+`` matching as many occurrences of character classes whereas ``{2,6}`` limits the match to between 2-6 occurrences.
@@ -162,6 +168,7 @@ A greedy match occurs when a quantifier, such as "*", "+", or "{m,n}", matches a
 In contrast, a lazy (also known as non-greedy or reluctant) match occurs when a quantifier is followed by a "?" character. It matches as little as possible, consuming the minimum number of characters necessary for the overall pattern to match. It aims to minimize the match length.
 
 By default, all quantifiers are greedy but can be converted into lazy by adding ``?`` after the quantifier
+
 
 ### Boundaries
 
@@ -173,6 +180,7 @@ for example, ``\bstring\b`` will only natch exact word 'string'. But this will n
 To not match a word ``\B`` can be used. In this instance ``\Bscript\B`` match word 'string' but will match words 'hamstring' and 'stringent'.
 
 Anchors are also a type of boundary ``^`` caret symbol defines the beginning of a string and ``$`` dollar symbol defines end of the string.
+
 
 ### Back-references
 
@@ -188,6 +196,7 @@ This will select the words that have same alphabet repeated multiple times in a 
 ``(\w)`` captures the single alphabet and stores in the first capturing group
 ``.*`` matches any number of characters
 ``\1`` is the back-reference to the first captured group which is ``(\w)``
+
 
 ### Look-ahead and Look-behind
 
@@ -206,6 +215,7 @@ Pattern: (?<=\d{2})\d+
 Description: This pattern matches any number that is preceded by two digits.
 
 Replacing ``=`` in the pattern with ``!`` we can change the behaviour to not match. This is also refered to as Negative Lookahead or Negative Lookbehind.
+
 
 ## Example Explained
 
